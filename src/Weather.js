@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import CorrectDate from "./CorrectDate"
 import axios from "axios";
 import './Weather.css';
 import './App.css';
@@ -10,6 +11,7 @@ export default function Weather(props){
     function dataResponse(response){
         setWeather({
             temperature: response.data.main.temp,
+            date: new Date(response.data.dt * 1000),
             wind: response.data.wind.speed,
             humidity: response.data.main.humidity,
             description: response.data.weather[0].description,
@@ -25,7 +27,7 @@ export default function Weather(props){
                 <div className="row">
                     <div className="col-6">
                 <ul>
-                    <li>Wednesday March 3, 21:42</li>
+                    <li><CorrectDate date={weather.date}/></li>
                     <li className="description">{weather.description}</li>
                     <li>Humidity: {weather.humidity}%</li>
                     <li>Wind: {weather.wind}km/h</li>
