@@ -1,8 +1,10 @@
 import React, {useState} from "react";
-import CorrectDate from "./CorrectDate"
+import BasicInfo from "./BasicInfo";
+import Temperature from "./Temperature";
 import axios from "axios";
 import './Weather.css';
 import './App.css';
+
 
 export default function Weather(props){
     const [weather, setWeather] = useState({})
@@ -26,28 +28,14 @@ export default function Weather(props){
                 <h1>{weather.city}</h1>
                 <div className="row">
                     <div className="col-6">
-                <ul>
-                    <li><CorrectDate date={weather.date}/></li>
-                    <li className="description">{weather.description}</li>
-                    <li>Humidity: {weather.humidity}%</li>
-                    <li>Wind: {weather.wind}km/h</li>
-                </ul>
+                <BasicInfo info={weather}/>
                 <form>
                     <input type="search" placeholder="Search a city" className="search"/>
                     <input type="submit" value="Search" className="button" />
                 </form>
-                    </div>
+                </div>
                     <div className="col-3">
-                    <h2>
-                        <span className="temperature">{Math.round(weather.temperature)}</span>{""}
-                        <a href="/" className="celsius">
-                        {" "}°C
-                        </a>
-                        |
-                        <a href="/" className="fahrenheit">
-                          F
-                        </a>
-                      </h2>
+                <Temperature temp={weather}/>
                     </div>
                 </div>
             </div>
