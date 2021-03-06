@@ -32,11 +32,11 @@ export default function Weather(props){
 
     function formSubmit(event){
         event.preventDefault();
+        search()
     }
 
     function formCityInput(event){
         setCity(event.target.value);
-        search()
     }
 
     if (load) {
