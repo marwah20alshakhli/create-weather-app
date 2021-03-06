@@ -57,3 +57,7 @@ h2 {
 .Weather .search{
     border-radius: 4px;
 }
+
+.temperature .celsius{
+    margin-left: 15px;
+}

@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import BasicInfo from "./BasicInfo";
 import Temperature from "./Temperature";
+import WeatherIcon from "./WeatherIcon";
 import axios from "axios";
 import './Weather.css';
 import './App.css';
@@ -17,9 +18,10 @@ export default function Weather(props){
             date: new Date(response.data.dt * 1000),
             wind: response.data.wind.speed,
             humidity: response.data.main.humidity,
+            icon: response.data.weather[0].icon,
             description: response.data.weather[0].description,
             city: response.data.name
-        });
+        })
         setLoad(true);
     }
 
@@ -53,6 +55,9 @@ export default function Weather(props){
                 </div>
                     <div className="col-3">
                 <Temperature temp={weather}/>
+                    </div>
+                    <div className="col-3">
+                <WeatherIcon code={weather.icon}/>
                     </div>
                 </div>
             </div>
