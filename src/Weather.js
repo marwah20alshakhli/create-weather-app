@@ -54,7 +54,7 @@ export default function Weather(props){
                 </form>
                 </div>
                     <div className="col-3">
-                <Temperature temp={weather} celsius={weather.temperature}/>
+                <Temperature celsius={weather.temperature}/>
                     </div>
                     <div className="col-3">
                 <WeatherIcon code={weather.icon}/>
