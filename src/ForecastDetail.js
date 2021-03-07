@@ -1,6 +1,5 @@
 import React from "react";
 import WeatherIcon from "./WeatherIcon";
-import axios from "axios";
 
 export default function ForecastDetail(props){
     function hours(){
