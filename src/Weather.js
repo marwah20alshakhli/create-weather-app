@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import BasicInfo from "./BasicInfo";
 import Temperature from "./Temperature";
 import WeatherIcon from "./WeatherIcon";
+import Forecast from "./Forecast";
 import axios from "axios";
 import './Weather.css';
 import './App.css';
@@ -55,12 +56,12 @@ export default function Weather(props){
                 </div>
                     <div className="col-3">
                 <Temperature celsius={weather.temperature}/>
-                    </div>
-                    <div className="col-3">
                 <WeatherIcon code={weather.icon}/>
-                    </div>
                 </div>
+                </div>
+                <Forecast city={weather.city}/>
             </div>
+        
         )
 
     } else {

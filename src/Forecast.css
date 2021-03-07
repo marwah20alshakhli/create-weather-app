@@ -1,8 +1,10 @@
-.Forecast {
-    margin: 20px 150px 10px 150px;
+.Forecast{
+    text-align: center;
+    margin: 15px auto;
     padding: 20px;
-    border: 1px solid #DFDFDF;
-    border-radius: 4px;
-    box-shadow: 2px 2px 5px #898C8E;
-    background-color: #1F6F8B;
+}
+
+.Forecast canvas{
+    display: block;
+    margin: 5px auto;
 }
